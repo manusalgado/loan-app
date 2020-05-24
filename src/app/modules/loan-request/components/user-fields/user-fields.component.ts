@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { UserPayload } from '../../entities/user';
 import { LoanRequestFacade } from '../../loan-request.facade';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-fields',
@@ -18,6 +19,10 @@ export class UserFieldsComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+  }
+
+  get loading$(): Observable<boolean> {
+    return this.facade.loading$
   }
 
   public initForm(): void {
