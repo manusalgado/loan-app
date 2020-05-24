@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="user-fields">
+    <div class="form">
+      <input type="text" 
+        placeholder="Nombre" 
+        formControlName="name" 
+        [ngClass]="{'required': submitted && form.controls.name.errors}">
+      <input type="email" 
+        placeholder="Correo" 
+        formControlName="email"
+        [ngClass]="{'required': submitted && form.controls.email.errors}">
+      <input type="text" 
+        placeholder="Cedula" 
+        formControlName="id"
+        [ngClass]="{'required': submitted && form.controls.id.errors}">
+    </div>
+    <button [ngClass]="{'disabled': !form.valid}" type="submit">Pedir crédito</button>
+  </div>
+</form>

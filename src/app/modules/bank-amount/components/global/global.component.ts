@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-global',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./global.component.sass']
 })
 export class GlobalComponent implements OnInit {
+
+  @Input() amount: number;
 
   constructor() { }
 

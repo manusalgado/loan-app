@@ -1,0 +1,13 @@
+{
+  "loanRequests": [
+    {   
+      "name": "",
+      "email": "",
+      "id": "",
+      "amountRequest": 0,
+      "payDate": "",
+      "creditStatus": "",
+      "payCredit": false
+    }
+  ]
+}
