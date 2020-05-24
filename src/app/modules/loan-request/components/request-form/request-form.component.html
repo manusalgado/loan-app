@@ -1,0 +1,26 @@
+<form>
+  <div class="request-form">
+    <h2 class="title">¿Cuanto necesitas?</h2>
+    <input class="range" 
+      list="ranges" 
+      value="0" 
+      type="range" 
+      min="100000" 
+      max="1000000" 
+      step="10" 
+      (input)="valueChanged($event)">
+    <datalist id="ranges">
+      <option value="100000">
+      <option value="200000">
+      <option value="300000">
+      <option value="400000">
+      <option value="500000">
+      <option value="600000">
+      <option value="700000">
+      <option value="800000">
+      <option value="900000">
+      <option value="1000000">
+    </datalist>
+    <p>{{rangevalue | currency}}</p>
+  </div>
+</form>

@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
+import { BankAmountModule } from './modules/bank-amount/bank-amount.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { environment } from 'src/environments/environment';
       maxAge: 30,
       logOnly: environment.production,
     }),
+    BankAmountModule
   ],
   providers: [],
   bootstrap: [AppComponent]
