@@ -14,6 +14,13 @@
         formControlName="id"
         [ngClass]="{'required': submitted && form.controls.id.errors}">
     </div>
-    <button [ngClass]="{'disabled': !form.valid}" type="submit">Pedir crédito</button>
+    <button [ngClass]="{'disabled': !form.valid}" type="submit">
+      <ng-container *ngIf="loading$ | async; else showText">
+        <span>Procesando</span>
+      </ng-container>
+      <ng-template #showText>
+        <span>Pedir crédito</span>
+      </ng-template>
+    </button>
   </div>
 </form>
