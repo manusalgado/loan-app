@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-request-content',
   templateUrl: './request-content.component.html',
   styleUrls: ['./request-content.component.sass']
 })
-export class RequestContentComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class RequestContentComponent {
+  @Input() selectedRange: number;
 }

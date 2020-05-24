@@ -22,6 +22,6 @@ export class LoanRequestEffects {
         map((data) => LoanRequestActions.sendRequestSuccessAction({data})),
         catchError(() => EMPTY)
       ))
-    ))
+    ));
 
 }

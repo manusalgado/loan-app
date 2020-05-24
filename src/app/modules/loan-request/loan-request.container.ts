@@ -15,7 +15,11 @@ export class LoanRequestContainer implements OnInit {
   }
 
   get loading$(): Observable<boolean> {
-    return this.facade.loading$
+    return this.facade.loading$;
+  }
+
+  get selectedRange$(): Observable<number> {
+    return this.facade.selectedRange$;
   }
 
 }

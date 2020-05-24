@@ -4,7 +4,7 @@ import { LoanRequestState } from './store/state/loan-request.state';
 import { LoanRequestActions } from './store/actions/loan-request.actions';
 import { UserPayload } from './entities/user';
 import { Observable } from 'rxjs';
-import { loading } from './store/selectors/loan.selectors';
+import { loading, selectedRange } from './store/selectors/loan.selectors';
 
 
 @Injectable()
@@ -18,8 +18,16 @@ export class LoanRequestFacade {
     select(loading)
   );
 
+  public selectedRange$: Observable<number> = this.store.pipe(
+    select(selectedRange)
+  );
+
   public sendRequest(payload: UserPayload): void {
     this.store.dispatch(LoanRequestActions.sendRequestAction({payload}));
+  }
+
+  public setRange(range: number): void {
+    this.store.dispatch(LoanRequestActions.setRangeAction({range}));
   }
 
 }
