@@ -16,7 +16,6 @@ export class RequestFormComponent implements OnInit {
 
   public valueChanged(value): void {
     this.rangevalue = value.target.value;
-
   }
 
 }
