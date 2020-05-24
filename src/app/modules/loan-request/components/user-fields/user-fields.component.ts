@@ -41,14 +41,15 @@ export class UserFieldsComponent implements OnInit {
     this.submitted = true;
     if (this.form.valid) {
       const {name, email, document} = this.form.value;
-      const payCredit: boolean = Math.random() < 0.5;
+      const creditStatus: boolean = Math.random() < 0.5;
       const payload: UserPayload = {
         name,
         email,
         document,
         id: uuidv1(),
         amountRequest: this.selectedRange,
-        payCredit
+        creditStatus,
+        payCredit: false
       };
       this.sendRequest(payload);
       this.form.reset();

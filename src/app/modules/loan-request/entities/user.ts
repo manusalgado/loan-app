@@ -4,7 +4,7 @@ export type UserPayload = Readonly<{
   id: string;
   amountRequest?: number;
   payDate?: string;
-  creditStatus?: string;
+  creditStatus?: boolean;
   payCredit?: boolean;
   document: number;
 }>;
