@@ -8,9 +8,14 @@ export const sendRequestAction = createAction(
 
 export const sendRequestSuccessAction = createAction(
   '[LoanRequest] send request success',
-  props<{data: any}>())
+  props<{data: UserPayload}>());
+
+export const setRangeAction = createAction(
+  '[LoanRequest] set range',
+  props<{range: number}>());
 
 export const LoanRequestActions = {
   sendRequestAction,
-  sendRequestSuccessAction
-}
+  sendRequestSuccessAction,
+  setRangeAction
+};

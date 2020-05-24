@@ -9,10 +9,10 @@
         placeholder="Correo" 
         formControlName="email"
         [ngClass]="{'required': submitted && form.controls.email.errors}">
-      <input type="text" 
+      <input type="number" 
         placeholder="Cedula" 
-        formControlName="id"
-        [ngClass]="{'required': submitted && form.controls.id.errors}">
+        formControlName="document"
+        [ngClass]="{'required': submitted && form.controls.document.errors}">
     </div>
     <button [ngClass]="{'disabled': !form.valid}" type="submit">
       <ng-container *ngIf="loading$ | async; else showText">

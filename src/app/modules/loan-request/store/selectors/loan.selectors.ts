@@ -7,4 +7,9 @@ export const loanSelector = createFeatureSelector<LoanRequestState>('loanRequest
 export const loading = createSelector(
   loanSelector,
   (state: LoanRequestState) => state.loading
-)
+);
+
+export const selectedRange = createSelector(
+  loanSelector,
+  (state: LoanRequestState) => state.range
+);
