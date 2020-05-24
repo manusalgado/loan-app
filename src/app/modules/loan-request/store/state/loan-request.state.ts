@@ -1,3 +1,4 @@
 export type LoanRequestState = Readonly <{
-  test: Object;
+  loan: Object;
+  loading: boolean;
 }>;
