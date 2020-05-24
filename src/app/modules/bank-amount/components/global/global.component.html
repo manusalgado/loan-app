@@ -1,6 +1,13 @@
 <div class="global">
   <div>
-    <p>Capital</p>
+    <ul class="global-list">
+      <li>
+        <a [routerLink]="['']">Inicio</a>
+      </li>
+      <li>
+        <a [routerLink]="['/users']" [routerLinkActive]="['active']">Usuarios</a>
+      </li>
+    </ul>
   </div>
   <div>
     <p>{{amount | currency}}</p>

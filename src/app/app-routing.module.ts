@@ -12,6 +12,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
     import('./modules/loan-request/loan-request.module').then((m) => m.LoanRequestModule)
+  },
+  {
+    path: 'users',
+    loadChildren: () =>
+    import('./modules/users/users.module').then((m) => m.UsersModule)
   }
 ];
 
