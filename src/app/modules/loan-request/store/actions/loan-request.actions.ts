@@ -14,8 +14,17 @@ export const setRangeAction = createAction(
   '[LoanRequest] set range',
   props<{range: number}>());
 
+export const statusAction = createAction(
+  '[LoanRequest] status',
+  props<{status: boolean}>());
+
+export const clearStoreAction = createAction(
+  '[LoanRequest] clear state');
+
 export const LoanRequestActions = {
   sendRequestAction,
   sendRequestSuccessAction,
-  setRangeAction
+  setRangeAction,
+  statusAction,
+  clearStoreAction
 };

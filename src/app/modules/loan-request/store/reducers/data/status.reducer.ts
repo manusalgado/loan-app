@@ -3,14 +3,14 @@ import produce from 'immer';
 
 import { LoanRequestActions } from '../../actions/loan-request.actions';
 
-export const initialState = 100000;
+export const initialState: boolean = null;
 
 const reducer = createReducer(
   initialState,
-  on(LoanRequestActions.setRangeAction, (state, {range}) => (range)),
+  on(LoanRequestActions.statusAction, (state, {status}) => (status)),
   on(LoanRequestActions.clearStoreAction, (state, {}) => initialState)
 );
 
-export const rangeReducer = produce((state: number, action: Action): number => {
+export const statusReducer = produce((state: boolean, action: Action): boolean => {
   return reducer(state, action);
 });
