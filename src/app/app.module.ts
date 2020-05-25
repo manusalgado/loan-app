@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { BankAmountModule } from './modules/bank-amount/bank-amount.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BankAmountModule } from './modules/bank-amount/bank-amount.module';
       maxAge: 30,
       logOnly: environment.production,
     }),
-    BankAmountModule
+    BankAmountModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

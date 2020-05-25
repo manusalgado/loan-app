@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class RequestContentComponent {
   @Input() selectedRange: number;
+  @Input() status: boolean;
 }

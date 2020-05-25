@@ -1,0 +1,8 @@
+<div class="loan-status" *ngIf="status">
+  <ng-container *ngIf="status else denied">
+    <h3>Solicitud aprobada</h3>
+  </ng-container>
+  <ng-template #denied>
+    <h3>Lo sentimos su solicitud fue negada</h3>
+  </ng-template>
+</div>

@@ -15,13 +15,14 @@ import { LoanRequestFacade } from './loan-request.facade';
 import { LoanRequestEffects } from './store/effects/loan-request.effects';
 import { LoanRequestService } from './loan-request.service';
 import { LoanRootReducer } from './store/reducers';
+import { LoanStatusComponent } from './components/loan-status/loan-status.component';
 
 export const LOAN_REQUEST_TOKEN = new InjectionToken<
   ActionReducer<LoanRequestState>
 >('Feature LoanRequestModule Reducers');
 
 @NgModule({
-  declarations: [LoanRequestContainer, RequestContentComponent, RequestFormComponent, UserFieldsComponent],
+  declarations: [LoanRequestContainer, RequestContentComponent, RequestFormComponent, UserFieldsComponent, LoanStatusComponent],
   imports: [
     CommonModule,
     LoanRequestRoutingModule,
