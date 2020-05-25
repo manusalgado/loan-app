@@ -1,4 +1,5 @@
 export type LoanRequestState = Readonly <{
-  loan: Object;
   loading: boolean;
+  range: number;
+  status: boolean;
 }>;

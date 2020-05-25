@@ -11,9 +11,9 @@ export class LoanRequestService {
 
   constructor(private http: HttpClient) { }
 
-  public send(payload: UserPayload): Observable<any> {
-    const url = 'http://localhost:3000/posts';
-    return this.http.post<any>(url, {});
+  public send(payload: UserPayload): Observable<UserPayload> {
+    const url = 'http://localhost:3000/loanRequests';
+    return this.http.post<UserPayload>(url, payload);
   }
 
 }

@@ -1,1 +1,4 @@
-<app-request-content></app-request-content>
+<app-request-content 
+  [selectedRange]="selectedRange$ | async"
+  [status]="status$ | async">
+</app-request-content>

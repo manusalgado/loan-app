@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, catchError, exhaustMap } from 'rxjs/operators';
+import { map, catchError, exhaustMap, mergeMap } from 'rxjs/operators';
 import { Observable, EMPTY } from 'rxjs';
 import { Action } from '@ngrx/store';
 
@@ -22,6 +22,12 @@ export class LoanRequestEffects {
         map((data) => LoanRequestActions.sendRequestSuccessAction({data})),
         catchError(() => EMPTY)
       ))
-    ))
+    ));
 
+  status$: Observable<Action> = createEffect(() => this.actions$
+    .pipe(
+      ofType(LoanRequestActions.sendRequestSuccessAction),
+      mergeMap((action) => [LoanRequestActions.statusAction({status: action.data.creditStatus})]),
+      catchError(() => EMPTY)
+    ));
 }

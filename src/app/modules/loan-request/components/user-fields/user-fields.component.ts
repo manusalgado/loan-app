@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { v1 as uuidv1 } from 'uuid';
+import { Observable } from 'rxjs';
+import _ from 'lodash';
 
 import { UserPayload } from '../../entities/user';
 import { LoanRequestFacade } from '../../loan-request.facade';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-fields',
@@ -15,6 +17,8 @@ export class UserFieldsComponent implements OnInit {
   public form: FormGroup;
   public submitted: boolean = false;
 
+  @Input() selectedRange: number;
+
   constructor(private facade: LoanRequestFacade) { }
 
   ngOnInit(): void {
@@ -22,27 +26,33 @@ export class UserFieldsComponent implements OnInit {
   }
 
   get loading$(): Observable<boolean> {
-    return this.facade.loading$
+    return this.facade.loading$;
   }
 
   public initForm(): void {
     this.form = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      id: new FormControl('', Validators.required)
-    })
+      document: new FormControl('', Validators.required)
+    });
   }
 
   public onSubmit(): void {
     this.submitted = true;
     if (this.form.valid) {
-      const {name, email, id} = this.form.value
+      const {name, email, document} = this.form.value;
+      const creditStatus: boolean = Math.random() < 0.5;
       const payload: UserPayload = {
         name,
         email,
-        id
-      }
+        document,
+        id: uuidv1(),
+        amountRequest: this.selectedRange,
+        creditStatus,
+        payCredit: false
+      };
       this.sendRequest(payload);
+      this.form.reset();
     }
   }
 
